@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generar 3 números aleatorios sin repetir</title>
+</head>
+<body>
+	<h1>Generar 3 números aleatorios sin repetir</h1>
+	<button class="btn-decorado"onclick="generarNumeros()">Generar</button>
+	<p id="resultado"></p>
+<style>
+body{
+    background-image:url(/1.jpg);
+    background-size: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+h1{
+    color: white;
+}
+p{
+    color: chartreuse;
+    font-size: 50px;
+}
+.btn-decorado {
+  background-color: aquamarine;
+  border: none;
+  color: black;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+</style>
+
+	<script>
+		function generarNumeros() {
+			var numeros = [];
+			while (numeros.length < 3) {
+				var numero = Math.floor(Math.random() * 99) + 1;
+				if (numeros.indexOf(numero) === -1) {
+					numeros.push(numero);
+				}
+			}
+			document.getElementById("resultado").innerHTML = "Los números generados son: " + numeros[0] + ", " + numeros[1] + ", " + numeros[2];
+		}
+	</script>
+</body>
+</html>
